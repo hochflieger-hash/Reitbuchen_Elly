@@ -20,16 +20,22 @@ URL = "https://rfv-leonberg.reitbuch.com/weekplan.php"
 
 # Targets (Update these for your specific lesson)
 # TARGET_DATE = "12.02." 
-TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=34)).strftime("%d.%m.")
+# The right date
+#TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=34)).strftime("%d.%m.") 
 #TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=35)).strftime("%d.%m.") #Sonntag
-TARGET_TIME = "9:00 - 10:00"
-#TARGET_TIME = "10:00 - 11:00"
+TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=26)).strftime("%d.%m.")
+# The right time
+#TARGET_TIME = "9:00 - 10:00"
+TARGET_TIME = "9:15 - 10:15"
 TARGET_NAME = "Dressur Standard"
 print(TARGET_DATE)
 
 # Timing Trigger: Actual Booking Time (Midnight)
-TRIGGER_HOUR = 0
-TRIGGER_MINUTE = 0
+#TRIGGER_HOUR = 0
+#TRIGGER_MINUTE = 0
+#TRIGGER_SECOND = 1
+TRIGGER_HOUR = 17
+TRIGGER_MINUTE = 40
 TRIGGER_SECOND = 1
 
 def run_test_booking():
