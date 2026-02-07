@@ -1,0 +1,43 @@
+name: Weekly Riding Booking with timer
+on:
+  schedule:
+    # 22:32 UTC is 23:32 German Time.
+    - cron: '12 21 * * 6' 
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Choose mode: real or test'
+        required: true
+        default: 'test'
+        type: choice
+        options:
+          - real
+          - test
+
+jobs:
+  book_lesson:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install selenium webdriver-manager pytz
+      - name: Run Script
+        env:
+          REITBUCH_USER: ${{ secrets.REITBUCH_USER }}
+          REITBUCH_PASS: ${{ secrets.REITBUCH_PASS }}
+        run: |
+          if [ "${{ github.event.inputs.mode }}" == "real" ]; then
+            python test_booking.py
+          else
+            python test_booking.py
+          fi
+      - name: Upload Screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: booking-results
+          path: "*.png"
