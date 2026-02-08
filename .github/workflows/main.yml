@@ -2,7 +2,7 @@ name: Weekly Riding Booking with timer
 on:
   schedule:
     # 22:32 UTC is 23:32 German Time.
-    - cron: '30 21 * * 6' 
+    - cron: '30 21 * * 0' 
   workflow_dispatch:
     inputs:
       mode:
