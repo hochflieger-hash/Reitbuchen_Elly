@@ -1,4 +1,4 @@
-# to change the Training lesson: change the "days=xx" in line 23, change the TARGET_TIME line 25 change the line 113 for the correct page.
+# to change the Training lesson: change the "days=xx" in line 24, change the TARGET_TIME line 29, change the TRIGGER_HOUR TRIGGER_MINUTE TRIGGER_SECOND in line 34-36, change the line 120 for the correct page.
 print("Test")
 
 import time
@@ -21,22 +21,22 @@ URL = "https://rfv-leonberg.reitbuch.com/weekplan.php"
 # Targets (Update these for your specific lesson)
 # TARGET_DATE = "12.02." 
 # The right date
-#TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=34)).strftime("%d.%m.") 
+TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=34)).strftime("%d.%m.") 
 #TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=35)).strftime("%d.%m.") #Sonntag
-TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=25)).strftime("%d.%m.")
+#TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=25)).strftime("%d.%m.")
 # The right time
-#TARGET_TIME = "9:00 - 10:00"
-TARGET_TIME = "9:15 - 10:15"
+TARGET_TIME = "9:00 - 10:00"
+#TARGET_TIME = "9:15 - 10:15"
 TARGET_NAME = "Dressur Standard"
 print(TARGET_DATE)
 
 # Timing Trigger: Actual Booking Time (Midnight)
-#TRIGGER_HOUR = 0
-#TRIGGER_MINUTE = 0
-#TRIGGER_SECOND = 1
-TRIGGER_HOUR = 10
-TRIGGER_MINUTE = 24
+TRIGGER_HOUR = 0
+TRIGGER_MINUTE = 0
 TRIGGER_SECOND = 1
+#TRIGGER_HOUR = 10
+#TRIGGER_MINUTE = 24
+#TRIGGER_SECOND = 1
 
 def run_test_booking():
     tz = pytz.timezone('Europe/Berlin')
