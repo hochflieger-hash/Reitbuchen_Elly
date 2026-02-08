@@ -23,7 +23,7 @@ URL = "https://rfv-leonberg.reitbuch.com/weekplan.php"
 # The right date
 #TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=34)).strftime("%d.%m.") 
 #TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=35)).strftime("%d.%m.") #Sonntag
-TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=26)).strftime("%d.%m.")
+TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=27)).strftime("%d.%m.")
 # The right time
 #TARGET_TIME = "9:00 - 10:00"
 TARGET_TIME = "9:15 - 10:15"
