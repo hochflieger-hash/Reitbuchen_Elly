@@ -23,7 +23,7 @@ URL = "https://rfv-leonberg.reitbuch.com/weekplan.php"
 # The right date
 #TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=34)).strftime("%d.%m.") 
 #TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=35)).strftime("%d.%m.") #Sonntag
-TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=27)).strftime("%d.%m.")
+TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=25)).strftime("%d.%m.")
 # The right time
 #TARGET_TIME = "9:00 - 10:00"
 TARGET_TIME = "9:15 - 10:15"
@@ -34,8 +34,8 @@ print(TARGET_DATE)
 #TRIGGER_HOUR = 0
 #TRIGGER_MINUTE = 0
 #TRIGGER_SECOND = 1
-TRIGGER_HOUR = 9
-TRIGGER_MINUTE = 50
+TRIGGER_HOUR = 10
+TRIGGER_MINUTE = 07
 TRIGGER_SECOND = 1
 
 def run_test_booking():
