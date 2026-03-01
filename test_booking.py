@@ -14,29 +14,31 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 
 # Configuration
-USER = os.environ.get('REITBUCH_USER')
-PASS = os.environ.get('REITBUCH_PASS')
+#USER = os.environ.get('REITBUCH_USER')
+USER = "ElenaXu"
+#PASS = os.environ.get('REITBUCH_PASS')
+PASS = "25112015"
 URL = "https://rfv-leonberg.reitbuch.com/weekplan.php"
 
 # Targets (Update these for your specific lesson)
 # TARGET_DATE = "12.02." 
 # The right date
-TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=34)).strftime("%d.%m.") 
+#TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=34)).strftime("%d.%m.") 
 #TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=35)).strftime("%d.%m.") #Sonntag
-#TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=25)).strftime("%d.%m.")
+TARGET_DATE = (datetime.datetime.now(pytz.timezone('Europe/Berlin')) + datetime.timedelta(days=25)).strftime("%d.%m.")
 # The right time
-TARGET_TIME = "9:00 - 10:00"
-#TARGET_TIME = "9:15 - 10:15"
+#TARGET_TIME = "9:00 - 10:00"
+TARGET_TIME = "9:15 - 10:15"
 TARGET_NAME = "Dressur Standard"
 print(TARGET_DATE)
 
 # Timing Trigger: Actual Booking Time (Midnight)
-TRIGGER_HOUR = 0
-TRIGGER_MINUTE = 0
-TRIGGER_SECOND = 1
-#TRIGGER_HOUR = 10
-#TRIGGER_MINUTE = 24
+#TRIGGER_HOUR = 0
+#TRIGGER_MINUTE = 0
 #TRIGGER_SECOND = 1
+TRIGGER_HOUR = 20
+TRIGGER_MINUTE = 32
+TRIGGER_SECOND = 1
 
 def run_test_booking():
     tz = pytz.timezone('Europe/Berlin')
@@ -116,8 +118,8 @@ def run_test_booking():
             time.sleep(0.05) # Higher precision for the midnight jump
 
         # 4. DIRECT NAVIGATION & BOOK
-        #driver.get("https://rfv-leonberg.reitbuch.com/weekplan.php?w=3&p=1")
-        driver.get("https://rfv-leonberg.reitbuch.com/weekplan.php?w=4&p=1")
+        driver.get("https://rfv-leonberg.reitbuch.com/weekplan.php?w=3&p=1")
+        #driver.get("https://rfv-leonberg.reitbuch.com/weekplan.php?w=4&p=1")
         
         lesson_xpath = (
             f"//td[descendant::*[contains(text(), '{TARGET_DATE}')]]"
